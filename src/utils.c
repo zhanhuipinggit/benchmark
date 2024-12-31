@@ -1,3 +1,8 @@
-//
-// Created by zhanJames on 2024/12/31.
-//
+#include <sys/time.h>
+#include "utils.h"
+
+long get_timestamp() {
+    struct timeval tv;
+    gettimeofday(&tv, NULL);
+    return tv.tv_sec * 1000 + tv.tv_usec / 1000;
+}
